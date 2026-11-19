@@ -9,7 +9,7 @@
    * form at formspree.io or web3forms.com and paste its URL here.
    * ------------------------------------------------------------------ */
   var FORM_ENDPOINT = '';
-  var FORM_EMAIL = 'admin@nexevo digitalsagency.com.au';
+  var FORM_EMAIL = 'you@yourdomain.com'; // placeholder: replace with your real email
 
   /* 1. Local preview: when opened straight from disk (file://), folder
    *    links like "about-us/" need an explicit index.html. */
@@ -62,7 +62,74 @@
     });
   });
 
-  /* 4. Contact form. */
+  /* 4. Count-up numbers: <span data-count="250">250</span>.
+   *    The final number is already in the HTML, so it still shows without JS. */
+  var counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        var el = entry.target;
+        var end = parseFloat(el.getAttribute('data-count'));
+        var decimals = (el.getAttribute('data-count').split('.')[1] || '').length;
+        var start = null;
+        function tick(t) {
+          if (!start) start = t;
+          var p = Math.min((t - start) / 1400, 1);
+          el.textContent = (end * (1 - Math.pow(1 - p, 3))).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        el.textContent = (0).toFixed(decimals);
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { io.observe(el); });
+  }
+
+  /* 5. Click-to-play video: <a class="h-video" data-video="YOUTUBE_ID">.
+   *    With no ID set, the link simply goes to its href. */
+  document.querySelectorAll('[data-video]').forEach(function (box) {
+    var id = box.getAttribute('data-video');
+    if (!id) return;
+    box.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      f.title = box.getAttribute('aria-label') || 'Video';
+      box.appendChild(f);
+    }, { once: true });
+  });
+
+  /* 6. Blog share buttons: <a data-share="facebook|linkedin|x">, <button data-share="copy">. */
+  var shareUrl = encodeURIComponent(location.href);
+  var shareTitle = encodeURIComponent(document.title);
+  var shareLinks = {
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl,
+    linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl,
+    x: 'https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle
+  };
+  document.querySelectorAll('[data-share]').forEach(function (el) {
+    var type = el.getAttribute('data-share');
+    if (shareLinks[type]) {
+      el.href = shareLinks[type];
+      el.target = '_blank';
+      el.rel = 'noopener';
+    } else if (type === 'copy') {
+      el.addEventListener('click', function () {
+        var done = function () {
+          var note = el.parentNode.querySelector('.copied');
+          if (note) { note.hidden = false; setTimeout(function () { note.hidden = true; }, 2000); }
+        };
+        if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(done, done);
+      });
+    }
+  });
+
+  /* 7. Contact form. */
   document.querySelectorAll('form[data-contact-form]').forEach(function (form) {
     var status = form.querySelector('.form-status');
     var button = form.querySelector('button[type=submit]');
@@ -78,7 +145,7 @@
       if (!FORM_ENDPOINT) {
         var lines = [];
         data.forEach(function (v, k) { if (v) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + v); });
-        var subject = 'Growth session enquiry from ' + (data.get('name') || 'the website');
+        var subject = 'Growth session inquiry from ' + (data.get('name') || 'the website');
         location.href = 'mailto:' + FORM_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
         say('Your email app should now open with your message ready to send.', true);
         return;
@@ -92,7 +159,7 @@
           say("Thanks! We've got your message and will be in touch within the hour.", true);
         })
         .catch(function () {
-          say('Something went wrong. Please call us on 1300 808 653 or email ' + FORM_EMAIL + '.', false);
+          say('Something went wrong. Please call us on (000) 000-0000 or email ' + FORM_EMAIL + '.', false);
         })
         .then(function () { button.disabled = false; });
     });

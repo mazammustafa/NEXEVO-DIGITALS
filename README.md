@@ -10,7 +10,7 @@ indi-creative-website/
 ├── about-us/index.html         ← Each page has its own folder, so the URLs
 ├── contact-us/index.html          stay the same as the WordPress site (good for SEO)
 ├── services/…                  ← Services + every sub-service page
-├── google-ads-sydney/ …        ← City pages (Google Ads / SEO / Meta Ads)
+├── google-ads-new-york/ …      ← City pages (Google Ads / SEO / Meta Ads): New York, Los Angeles, Chicago, Miami, Houston, Dallas
 ├── blog/, case-studies/, category/…  ← Blog, case studies, category pages
 ├── assets/
 │   ├── css/style.css           ← Shared styles (header, footer, design system)
@@ -18,7 +18,7 @@ indi-creative-website/
 │   └── images/
 │       ├── blog/               ← Blog post images
 │       ├── case-studies/       ← Case study photos
-│       ├── cities/             ← Sydney, Melbourne, Brisbane, Gold Coast, Perth
+│       ├── cities/             ← Old Australian city photos (no longer used)
 │       ├── icons/              ← Site icon (favicon) and Google icon
 │       ├── logos/              ← Client logos
 │       ├── reviews/            ← Google reviewer photos
@@ -27,14 +27,36 @@ indi-creative-website/
 ├── sitemap.xml, robots.txt, .htaccess
 ```
 
-Each page has a small `<style>` block in its `<head>` for that page's own section spacing and colours.
+### Colours, fonts and font sizes (design tokens)
+
+All colours, font families and font sizes are CSS variables in one `:root` block at the top of `assets/css/style.css` ("0. DESIGN TOKENS"). Change a value there and it updates everywhere, including inline styles on the pages.
+
+- Colours: `--color-primary` (brand yellow), `--color-dark`, `--color-cream`, `--color-text`, `--color-border`, and so on. Transparent versions use `rgba(var(--rgb-primary), .25)`.
+- Fonts: `--font-display` (Bebas Neue headings), `--font-body` (DM Sans), `--font-hand` (Caveat).
+- Font sizes: fixed sizes are `--fs-15`, `--fs-16_5` (16.5px), and so on. Fluid heading sizes are `--fs-fluid-34-58` (34px min, 58px max). Shortcuts: `--fs-body`, `--fs-h1`, `--fs-h2`.
+
+### Header and footer (global)
+
+The header and footer live in one place: `assets/js/layout.js`. Edit them there and every page updates. Each page only has two lines where they appear:
+
+```html
+<script src="assets/js/layout.js" data-part="header"></script>
+<script src="assets/js/layout.js" data-part="footer"></script>
+```
+
+Inner pages put `../` (or `../../`) in front of `assets/`, the same as for `style.css`. Inside `layout.js`, write links relative to the site root as `${R}about-us/`, and use `${H}` for the home page; the script fills in the right path for each page.
+
+There is no CSS inside the pages: no `<style>` blocks and no `style=""` attributes. All CSS lives in `assets/css/style.css`:
+
+- Section 13 holds each page's own styles, scoped by a class on `<body>` (`page-about-us`, or a shared template class like `tpl-service`, `tpl-city-a`).
+- Section 14 holds element styles as small classes (`s-1a2b3c4`), used where a page needs a one-off style.
 
 ### Class names
 
 | Class | What it is |
 |---|---|
 | `site-header`, `site-footer` | Header and footer, the same on every page |
-| `page-section` + `section-1`, `section-2`… | Each full-width band of a page, numbered top to bottom. Its spacing and background are set in that page's `<style>` |
+| `page-section` + `section-1`, `section-2`… | Each full-width band of a page, numbered top to bottom. Its spacing and background are set in section 13 of `style.css` |
 | `page-section__inner` (`is-boxed` = centred, max 1140px) | Inner wrapper of a section |
 | `page-block` | One content block inside a section |
 | `indi`, `wrap`, `btn`, `kick`… | Design system (shared buttons, headings and layout) |
