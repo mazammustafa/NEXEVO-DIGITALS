@@ -1,6 +1,6 @@
-# Nexevo Digitals — Static Website (HTML / CSS / JS)
+# Nexevo Digital — Static Website (HTML / CSS / JS)
 
-This is a static version of the Nexevo Digitals website. It does not use WordPress, PHP or a database.
+This is a static version of the Nexevo Digital website. It does not use WordPress, PHP or a database.
 
 ## Folder structure
 
@@ -78,7 +78,7 @@ Open `assets/js/main.js`. Near the top you'll see:
 var FORM_ENDPOINT = '';
 ```
 
-- **Left empty (the default):** clicking "Send it through" opens the visitor's email app with the message already written, addressed to admin@nexevo digitalsagency.com.au.
+- **Left empty (the default):** clicking "Send it through" opens the visitor's email app with the message already written, addressed to admin@Nexevo Digitalagency.com.au.
 - **Recommended:** create a free form at https://formspree.io or https://web3forms.com, then paste its URL here (for example `'https://formspree.io/f/abcd1234'`). After that, messages go straight to your inbox and the visitor stays on the page.
 
 ## Things that changed from WordPress

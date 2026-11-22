@@ -159,7 +159,7 @@
           say("Thanks! We've got your message and will be in touch within the hour.", true);
         })
         .catch(function () {
-          say('Something went wrong. Please call us on (000) 000-0000 or email ' + FORM_EMAIL + '.', false);
+          say('Something went wrong. Please call us on (469) 523-4761 or email ' + FORM_EMAIL + '.', false);
         })
         .then(function () { button.disabled = false; });
     });

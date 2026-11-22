@@ -4868,7 +4868,8 @@ html {
 .indi .h-pagehero h1 {
    font-size: var(--fs-fluid-46-96);
    margin-top: 16px;
-   text-wrap: balance
+   text-wrap: balance;
+   width: 90%;
 }
 
 .indi .h-pagehero .lead {
@@ -5149,34 +5150,6 @@ html {
    transition: transform .22s, border-color .22s, box-shadow .22s
 }
 
-.indi .h-cards .ic {
-   width: 56px;
-   height: 56px;
-   border-radius: 16px;
-   background: var(--color-primary-soft);
-   color: var(--color-ink);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   transition: background .22s
-}
-
-.indi .h-cards article:hover .ic {
-   background: var(--color-primary)
-}
-
-.indi .h-cards article:has(.ic) .no {
-   position: absolute;
-   top: 24px;
-   right: 24px;
-   font-size: var(--fs-40);
-   -webkit-text-stroke: 1px var(--color-primary-muted)
-}
-
-.indi .h-cards article:has(.ic) h3 {
-   margin-top: 20px
-}
-
 /* main service intro: heading, feature image, text, checklist, button */
 .indi .h-feature {
    width: 100%;
@@ -5215,17 +5188,29 @@ html {
 }
 
 .indi .h-cards .no {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 56px;
+   height: 56px;
+   border-radius: 16px;
+   background: var(--color-primary-soft);
+   color: var(--color-ink);
    font-family: var(--font-display);
    font-stretch: var(--indi-display-stretch);
-   font-size: var(--fs-44);
+   font-size: var(--fs-28);
+   letter-spacing: .02em;
    line-height: 1;
-   color: transparent;
-   -webkit-text-stroke: 1px var(--color-primary-dark)
+   transition: background .22s
+}
+
+.indi .h-cards article:hover .no {
+   background: var(--color-primary)
 }
 
 .indi .h-cards h3 {
    font-size: var(--fs-24);
-   margin-top: 16px
+   margin-top: 20px
 }
 
 .indi .h-cards p {
@@ -5286,6 +5271,21 @@ html {
    margin-bottom: 0
 }
 
+.indi .h-img.is-team-at-computers {
+   background-image: url(../images/team/team-at-computers.webp);
+}
+.indi .h-img.is-cameron-headset {
+   background-image: url(../images/team/cameron-headset.webp);
+}
+.indi .h-img.is-meta-team {
+   background-image: url(../images/team/meta-team.webp);
+}
+.indi .h-img.is-team-photo-1 {
+   background-image: url(../images/team/team-photo-1.webp);
+}
+.indi .h-img.is-office-meeting {
+   background-image: url(../images/team/office-meeting.webp);
+}
 .indi .h-checkcard.is-wide {
    margin-top: 24px;
    padding: 32px 34px
@@ -6568,6 +6568,90 @@ html {
 .indi.ct-hero{position:relative;overflow:hidden;color:var(--color-white)}
 .indi.ct-hero .h-pagehero{padding-bottom:90px}
 .indi .h-mt14{margin-top:14px}
+
+/* logo: space between NEXEVO and DIGITAL */
+.indihd .logo b,
+.indift .logo b,
+.mbrand b {
+   margin-left: .22em;
+}
+
+/* numbers in place of icons (industries, locations, features) */
+.indi .h-ind i,
+.indi .h-loc i,
+.indi .h-why4 i,
+.indi .h-feat i {
+   font-style: normal;
+   font-family: var(--font-display);
+   font-stretch: var(--indi-display-stretch);
+   letter-spacing: .02em;
+   line-height: 1
+}
+
+.indi .h-ind i {
+   font-size: var(--fs-26)
+}
+
+.indi .h-why4 i {
+   font-size: var(--fs-24)
+}
+
+.indi .h-feat i {
+   font-size: var(--fs-22)
+}
+
+.indi .h-loc i {
+   font-size: var(--fs-20);
+   min-width: 24px
+}
+
+/* process: icon in the circle, step number as a small label */
+.indi .h-steps>div {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start
+}
+
+.indi .h-steps .step-ic {
+   order: 0;
+   width: 58px;
+   height: 58px;
+   border-radius: 50%;
+   background: var(--color-primary);
+   color: var(--color-ink);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   z-index: 1;
+   font-style: normal
+}
+
+.indi .h-steps>div:before {
+   order: 1;
+   content: "Step 0" counter(step);
+   display: block;
+   width: auto;
+   height: auto;
+   border-radius: 0;
+   background: none;
+   color: var(--color-primary-dark);
+   font-family: var(--font-body);
+   font-size: var(--fs-12);
+   font-weight: 700;
+   letter-spacing: .14em;
+   text-transform: uppercase;
+   margin-top: 18px
+}
+
+.indi .h-steps h3 {
+   order: 2;
+   margin-top: 6px
+}
+
+.indi .h-steps p {
+   order: 3
+}
 
 /* ==========================================================
    13. PAGE STYLES (moved here from each page's <style> block)
