@@ -9,7 +9,7 @@
    * form at formspree.io or web3forms.com and paste its URL here.
    * ------------------------------------------------------------------ */
   var FORM_ENDPOINT = '';
-  var FORM_EMAIL = 'you@yourdomain.com'; // placeholder: replace with your real email
+  var FORM_EMAIL = 'info@nexevodigital.com';
 
   /* 1. Local preview: when opened straight from disk (file://), folder
    *    links like "about-us/" need an explicit index.html. */
