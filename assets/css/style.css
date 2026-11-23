@@ -5950,7 +5950,7 @@ html {
 
 .nexevo .h-values h3 {
    font-size: var(--fs-28);
-   margin-top: 18px;
+   margin-top: 0;
    color: var(--color-white)
 }
 
