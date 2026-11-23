@@ -6549,7 +6549,7 @@ html {
 .indi .ct-mapcard a{display:inline-flex;margin-top:14px;font-size:var(--fs-14);font-weight:650;color:var(--color-primary);border-bottom:2px solid var(--color-primary);padding-bottom:2px}
 /* quick FAQ */
 .ct-faqband{background:var(--color-cream);border-top:1px solid var(--color-border);padding:100px 0}
-.indi .ct-faq{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.indi .ct-faq{display:grid;grid-template-columns:1fr;gap:0}
 @media(max-width:1000px){
 .indi .ct-grid{grid-template-columns:1fr}
 .indi .ct-info{position:static}
@@ -6651,6 +6651,56 @@ html {
 
 .indi .h-steps p {
    order: 3
+}
+
+/* service overview cards: icon box instead of a number */
+.indi .h-svc .ic,
+.indi .h-cards .ic {
+   width: 58px;
+   height: 58px;
+   border-radius: 16px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-style: normal;
+   transition: background .22s, color .22s
+}
+
+.indi .h-svc .ic {
+   background: rgba(var(--rgb-primary), .12);
+   color: var(--color-primary)
+}
+
+.indi .h-svc article:hover .ic {
+   background: var(--color-primary);
+   color: var(--color-ink)
+}
+
+.indi .h-cards .ic {
+   background: var(--color-primary-soft);
+   color: var(--color-ink)
+}
+
+.indi .h-cards article:hover .ic {
+   background: var(--color-primary)
+}
+
+/* consent checkbox: keep box and text on one line */
+.indi .ct-fields label.ct-consent {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 0;
+   font-weight: 500;
+   cursor: pointer
+}
+
+.indi .ct-fields label.ct-consent input {
+   width: 18px;
+   height: 18px;
+   margin: 0;
+   padding: 0;
+   flex: none
 }
 
 /* ==========================================================
