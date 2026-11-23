@@ -1,4 +1,4 @@
-/* Indi Creative — site scripts (no dependencies) */
+/* nexevo Creative — site scripts (no dependencies) */
 (function () {
   'use strict';
 
@@ -27,7 +27,7 @@
   }
 
   /* 2. Mobile menu: close it after a link is tapped. */
-  var menuToggle = document.getElementById('indimt');
+  var menuToggle = document.getElementById('nexevomt');
   if (menuToggle) {
     document.querySelectorAll('.mpanel a').forEach(function (a) {
       a.addEventListener('click', function () { menuToggle.checked = false; });

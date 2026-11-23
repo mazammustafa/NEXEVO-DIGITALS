@@ -5,7 +5,7 @@ This is a static version of the Nexevo Digital website. It does not use WordPres
 ## Folder structure
 
 ```
-indi-creative-website/
+nexevo-creative-website/
 ├── index.html                  ← Home page
 ├── about-us/index.html         ← Each page has its own folder, so the URLs
 ├── contact-us/index.html          stay the same as the WordPress site (good for SEO)
@@ -59,7 +59,7 @@ There is no CSS inside the pages: no `<style>` blocks and no `style=""` attribut
 | `page-section` + `section-1`, `section-2`… | Each full-width band of a page, numbered top to bottom. Its spacing and background are set in section 13 of `style.css` |
 | `page-section__inner` (`is-boxed` = centred, max 1140px) | Inner wrapper of a section |
 | `page-block` | One content block inside a section |
-| `indi`, `wrap`, `btn`, `kick`… | Design system (shared buttons, headings and layout) |
+| `nexevo`, `wrap`, `btn`, `kick`… | Design system (shared buttons, headings and layout) |
 | `ui-…` | Small reusable parts: post cards, form fields, post navigation |
 
 ## Viewing it locally

@@ -22,9 +22,9 @@
 
 /* ---------------- HEADER ---------------- */
 header: `<header class="page-section site-header"><div class="page-section__inner">
-<div class="page-block site-header__content"><div class="indihd">
+<div class="page-block site-header__content"><div class="nexevohd">
 <a class="skip" href="#content">Skip to content</a>
-<input class="mtoggle" type="checkbox" id="indimt" aria-label="Open menu">
+<input class="mtoggle" type="checkbox" id="nexevomt" aria-label="Open menu">
 <div class="bar">
 <a class="logo" href="${H}">NEXEVO <b>DIGITAL</b></a>
 <nav class="nav" aria-label="Main">
@@ -38,16 +38,16 @@ header: `<header class="page-section site-header"><div class="page-section__inne
 <div class="hright">
 <a class="phone" href="tel:+14695234761">(469) 523-4761</a>
 <a class="cta" href="${R}contact-us/">Let's Talk</a>
-<label class="burger" for="indimt" aria-label="Menu"><i></i><i></i><i></i></label>
+<label class="burger" for="nexevomt" aria-label="Menu"><i></i><i></i><i></i></label>
 </div>
 </div>
-<div class="mpanel"><div class="mtop"><span class="mbrand">NEXEVO <b>DIGITAL</b></span><label class="mclose" for="indimt" aria-label="Close menu">✕</label></div><div class="mh">Services</div><a href="${R}services/website-development/">Web Design</a><a href="${R}services/web-development/">Web Development</a><a href="${R}services/website-development/ecommerce/">Ecommerce Website Development</a><a href="${R}services/shopify-website-development/">Shopify Website Development</a><a href="${R}services/social-media-management/">Social Media Management</a><a href="${R}services/search-engine-optimization/">SEO</a><a href="${R}services/logo-design/">Logo Design</a><a href="${R}services/google-ads/">Google Ads</a><div class="mh">Company</div><a href="${H}">Home</a><a href="${R}about-us/">About Us</a><a href="${R}blog/">Blog</a><a href="${R}contact-us/">Contact Us</a><a href="tel:+14695234761">Call (469) 523-4761</a><a class="mcta" href="${R}contact-us/">Let's chat</a></div>
+<div class="mpanel"><div class="mtop"><span class="mbrand">NEXEVO <b>DIGITAL</b></span><label class="mclose" for="nexevomt" aria-label="Close menu">✕</label></div><div class="mh">Services</div><a href="${R}services/website-development/">Web Design</a><a href="${R}services/web-development/">Web Development</a><a href="${R}services/website-development/ecommerce/">Ecommerce Website Development</a><a href="${R}services/shopify-website-development/">Shopify Website Development</a><a href="${R}services/social-media-management/">Social Media Management</a><a href="${R}services/search-engine-optimization/">SEO</a><a href="${R}services/logo-design/">Logo Design</a><a href="${R}services/google-ads/">Google Ads</a><div class="mh">Company</div><a href="${H}">Home</a><a href="${R}about-us/">About Us</a><a href="${R}blog/">Blog</a><a href="${R}contact-us/">Contact Us</a><a href="tel:+14695234761">Call (469) 523-4761</a><a class="mcta" href="${R}contact-us/">Let's chat</a></div>
 </div></div>
 </div></header>`,
 
 /* ---------------- FOOTER ---------------- */
 footer: `<footer class="page-section site-footer"><div class="page-section__inner">
-<div class="page-block site-footer__content"><div class="indift">
+<div class="page-block site-footer__content"><div class="nexevoft">
 <div class="wrap grid">
 <div class="brand">
 <a class="logo" href="${H}">NEXEVO <b>DIGITAL</b></a>
@@ -72,7 +72,7 @@ footer: `<footer class="page-section site-footer"><div class="page-section__inne
 
 /* ---------------- GET IN TOUCH (contact block + form) ---------------- */
 contact: `<section class="page-section h-contact-sec"><div class="page-section__inner">
-<div class="page-block"><div class="indi on-dark s-b9d8f8c"><div class="glow glow-c"></div><div class="wrap h-contact s-dbfdae9">
+<div class="page-block"><div class="nexevo on-dark s-b9d8f8c"><div class="glow glow-c"></div><div class="wrap h-contact s-dbfdae9">
 <div>
 <div class="eyebrow">Contact</div>
 <h2 class="s-2de3846">Get in touch <span class="acc">with us</span></h2>
