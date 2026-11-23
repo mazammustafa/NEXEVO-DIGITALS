@@ -10,14 +10,13 @@ nexevo-creative-website/
 ├── about-us/index.html         ← Each page has its own folder, so the URLs
 ├── contact-us/index.html          stay the same as the WordPress site (good for SEO)
 ├── services/…                  ← Services + every sub-service page
-├── google-ads-new-york/ …      ← City pages (Google Ads / SEO / Meta Ads): New York, Los Angeles, Chicago, Miami, Houston, Dallas
-├── blog/, case-studies/, category/…  ← Blog, case studies, category pages
+├── google-packages/, seo-packages/ ← Package pricing pages
+├── blog/ + 3 post folders       ← Blog listing and blog posts
 ├── assets/
 │   ├── css/style.css           ← Shared styles (header, footer, design system)
 │   ├── js/main.js              ← Reviews slider, contact form, mobile menu
 │   └── images/
 │       ├── blog/               ← Blog post images
-│       ├── case-studies/       ← Case study photos
 │       ├── cities/             ← Old Australian city photos (no longer used)
 │       ├── icons/              ← Site icon (favicon) and Google icon
 │       ├── logos/              ← Client logos
@@ -88,7 +87,7 @@ var FORM_ENDPOINT = '';
 | Trustindex review plugin | Static Google review cards with a slider (`main.js` section 3). New reviews have to be added to the HTML by hand. |
 | Elementor contact form | Plain HTML form (see above) |
 | Elementor sticky header (JS) | CSS `position: sticky` |
-| Blog / case-study grids | Fixed HTML. When you publish a new post, add its card to `blog/`, `case-studies/` and the home page yourself. |
+| Blog grid | Fixed HTML. When you publish a new post, add its card to `blog/` and the home page yourself. |
 
 The Google tag (GT-5M3G6TRH), meta titles and descriptions, canonical URLs, Open Graph tags and schema (JSON-LD) are all kept.
 
@@ -110,4 +109,4 @@ The header, mobile menu and footer link only to these 11 pages:
 | Logo Design | `services/logo-design/` |
 | Google Ads | `services/google-ads/` |
 
-All other folders (blog, case studies, city pages, packages, Meta Ads, Terms, Privacy and so on) are still here but nothing on the site links to them. To bring one back, add a link to it in the header and footer.
+Pages that nothing on the site linked to (the city pages, Meta Ads packages, the Services overview page and two Meta Ads sub-pages) have been deleted. Every remaining page is reachable from the navigation, the footer or a page linked from them.
